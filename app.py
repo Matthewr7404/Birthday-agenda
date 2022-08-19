@@ -1,6 +1,5 @@
 import tkinter as tk
 import birthdays_functional
-from PIL import ImageTk, Image
 import numpy as np
 
 # Define main window
@@ -11,10 +10,6 @@ window.resizable(False, False)
 
 # Define icon
 window.iconbitmap('person.ico')
- 
-# Define image
-img = Image.open('birthday-cake.png').resize((100,100))
-img = ImageTk.PhotoImage(img)
 
 # Divide window in frames
 frame0 = tk.Frame(master=window, height=50)
@@ -39,17 +34,9 @@ next = birthdays_functional.next_Birthday()
 next_day = int(next.day)
 next_month = int(next.month)
 
-for i, contato in enumerate(contacts):
-    if has_number(contato):
-        pass
-    else:
-        contacts[i] = no_number
-
-
-
 # Filling main window
 if len(bd_today) > 0:
-    
+
     text = 'Today is the birthday of:\n\n'
 
     for i in range(len(bd_today)):
@@ -59,14 +46,10 @@ if len(bd_today) > 0:
     l1.config(font =("Courier", 14))
     l1.pack()
 
-
-    l2 = tk.Label(frame2, image=img)
-    l2.pack()
-
 else:
 
     months = {1: "January", 2: "February", 3: "March", 4: "April", 5:"May", 6:"June", 7:"July", 8:"Agust",\
-        9:"September", 10:"October", 11:"Novembero", 12:"December"}
+        9:"September", 10:"October", 11:"November", 12:"December"}
 
 
     text = 'Today we have no birthdays\n\n'
